@@ -8,8 +8,8 @@ public class Bank {
         customers = new Customer[5];
     }
 
-    public void addCustomer(String f, String l) {
-        customers[numberOfCustomers] = new Customer(f, l);
+    public void addCustomer(String firstName, String lastName) {
+        customers[numberOfCustomers] = new Customer(firstName, lastName);
         this.numberOfCustomers++;
     }
 

@@ -1,4 +1,7 @@
-package com.safari.bank.banking;
+package com.safari.bank.banking.test;
+
+import com.safari.bank.banking.Account;
+import com.safari.bank.banking.Customer;
 
 public class TestBanking_3 {
     public static void main(String[] args) {
