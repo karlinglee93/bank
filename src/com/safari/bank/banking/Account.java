@@ -21,12 +21,11 @@ public class Account {
 
     // 从当前余额中减去金额
     public boolean withdraw(double amt) {
-//        this.balance -= amt;
-        if (amt < this.balance) {
-            this.balance -= amt;
-            return true;
-        } else {
+        if (amt > this.balance) {
             return false;
         }
+
+        this.balance -= amt;
+        return true;
     }
 }
