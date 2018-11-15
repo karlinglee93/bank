@@ -14,12 +14,19 @@ public class Account {
     }
 
     // 向当前余额增加金额
-    public void deposit(double amt) {
+    public boolean deposit(double amt) {
         this.balance +=amt;
+        return true;
     }
 
     // 从当前余额中减去金额
-    public void withdraw(double amt) {
-        this.balance -= amt;
+    public boolean withdraw(double amt) {
+//        this.balance -= amt;
+        if (amt < this.balance) {
+            this.balance -= amt;
+            return true;
+        } else {
+            return false;
+        }
     }
 }
