@@ -3,26 +3,28 @@ package com.safari.bank.banking;
 public class CheckingAccount extends Account {
     private double overdraftProtection;
 
-    public CheckingAccount(double balance) {
-        super(balance);
+    public CheckingAccount(double init_balance) {
+        super(init_balance);
     }
 
-    public CheckingAccount(double balance, double protect) {
-        super(balance);
-        overdraftProtection = protect;
+    public CheckingAccount(double init_balance, double overdraftProtection) {
+        super(init_balance);
+        this.overdraftProtection = overdraftProtection;
     }
 
     @Override
     public boolean withdraw(double amt) {
         if (balance >= amt) {
             balance -= amt;
-            return true;
-        } else if ((amt - balance) >= overdraftProtection){
-            balance = 0;
-            overdraftProtection -= (amt - balance);
-            return true;
+        } else {
+            if (overdraftProtection >= (amt - balance)) {
+                overdraftProtection -= (amt - balance);
+                balance = 0;
+            } else {
+                return false;
+            }
         }
 
-        return false;
+        return true;
     }
 }
