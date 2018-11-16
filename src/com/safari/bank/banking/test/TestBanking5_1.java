@@ -5,8 +5,6 @@ import com.safari.bank.banking.bank5_1.*;
 public class TestBanking5_1 {
     public static void main(String[] args) {
         Bank bank = new Bank();
-        Customer customer;
-        Account account;
 
         bank.addCustomer("Jane", "Smith");
         bank.getCustomer(0).addAccount(new SavingAccount(500, 0.03));
@@ -23,22 +21,24 @@ public class TestBanking5_1 {
         bank.getCustomer(3).addAccount(new SavingAccount(150, 0.03));
         bank.getCustomer(3).addAccount(new CheckingAccount(200, 200));
 
-        System.out.println("CUSTOMERS REPORT");
-        System.out.println("================");
+        System.out.println("\t\t\tCUSTOMERS REPORT");
+        System.out.println("\t\t\t================");
 
         for (int i = 0; i < bank.getNumberOfCustomers(); i++) {
-            System.out.println("Customer: " + bank.getCustomer(i).getFirstName() + ", " + bank.getCustomer(i).getLastName());
-
-            String account_type = null;
+            Customer customer = bank.getCustomer(i);
+            System.out.println("Customer: " + customer.getFirstName() + ", " + customer.getLastName());
 
             for (int j = 0; j < bank.getCustomer(i).getNumberOfAccounts(); j++) {
-                if (bank.getCustomer(i).getAccount(j) instanceof SavingAccount) {
+                Account account = customer.getAccount(j);
+                String account_type = null;
+
+                if (account instanceof SavingAccount) {
                     account_type = "SavingAccount";
-                } else if (bank.getCustomer(i).getAccount(j) instanceof CheckingAccount) {
+                } else if (account instanceof CheckingAccount) {
                     account_type = "CheckingAccount";
                 }
 
-                System.out.println("    " +account_type + ": current balance is ¥" + bank.getCustomer(i).getAccount(j).getBalance());
+                System.out.println("    " + account_type + ": current balance is ¥" + account.getBalance());
             }
             System.out.println();
         }
