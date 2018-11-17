@@ -2,7 +2,7 @@ package com.safari.bank.banking.test;
 
 import com.safari.bank.banking.bank5_1.*;
 
-public class TestBanking5_1 {
+public class TestBanking_5_1 {
     public static void main(String[] args) {
         Bank bank = new Bank();
 
