@@ -1,16 +1,14 @@
 package com.safari.bank.banking.bank8;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Bank {
 
-    private ArrayList<Customer> customers;
+    private List<Customer> customers;
 
     public Bank() {
-    }
-
-    public Bank(ArrayList<Customer> customers) {
-        this.customers = customers;
+        customers = new ArrayList<Customer>();
     }
 
     private static Bank instance = new Bank();
@@ -24,7 +22,11 @@ public class Bank {
         customers.add(cust);
     }
 
-    public Customer getCustomer(int index) {
+    public int getNumberOfCustomers() {
+        return customers.size();
+    }
+
+    public Customer getCustomers(int index) {
         return customers.get(index);
     }
 }
