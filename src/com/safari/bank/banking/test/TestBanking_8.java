@@ -12,18 +12,18 @@ public class TestBanking_8 {
         bank.addCustomer("Soley", "Tim");
         bank.addCustomer("Soley", "Maria");
 
-        customer = bank.getCustomers(0);
+        customer = bank.getCustomer(0);
         customer.addAccount(new SavingAccount(500, 0.03));
         customer.addAccount(new CheckingAccount(200));
 
-        customer = bank.getCustomers(1);
+        customer = bank.getCustomer(1);
         customer.addAccount(new CheckingAccount(200));
 
-        customer = bank.getCustomers(2);
+        customer = bank.getCustomer(2);
         customer.addAccount(new SavingAccount(1500, 0.05));
         customer.addAccount(new CheckingAccount(200));
 
-        customer = bank.getCustomers(3);
+        customer = bank.getCustomer(3);
         customer.addAccount(new SavingAccount(150, 0.05));
         customer.addAccount(new CheckingAccount(200));
 

@@ -1,6 +1,7 @@
 package com.safari.bank.banking.bank8;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 public class Bank {
@@ -26,7 +27,11 @@ public class Bank {
         return customers.size();
     }
 
-    public Customer getCustomers(int index) {
+    public Iterator<Customer> getCustomers() {
+        return customers.iterator();
+    }
+
+    public Customer getCustomer(int index) {
         return customers.get(index);
     }
 }

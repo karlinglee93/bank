@@ -1,6 +1,7 @@
 package com.safari.bank.banking.bank8;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 public class Customer {
@@ -17,8 +18,8 @@ public class Customer {
 		accounts = new ArrayList<Account>();
 	}
 
-	public Account getAccount(int index) {
-		return accounts.get(index);
+	public Iterator<Account> getAccounts() {
+		return accounts.iterator();
 	}
 
 	public void addAccount(Account account) {
