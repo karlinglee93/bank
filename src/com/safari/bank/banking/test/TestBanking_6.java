@@ -12,10 +12,10 @@ public class TestBanking_6 {
         Customer customer;
         CustomerReport customerReport = new CustomerReport();
 
-        Bank.getBank().addCustomer("simms", "jane");
-        Bank.getBank().addCustomer("Bryant", "owen");
-        Bank.getBank().addCustomer("Soley", "Tim");
-        Bank.getBank().addCustomer("Soley", "Maria");
+        bank.addCustomer("simms", "jane");
+        bank.addCustomer("Bryant", "owen");
+        bank.addCustomer("Soley", "Tim");
+        bank.addCustomer("Soley", "Maria");
 
         customer = Bank.getBank().getCustomer(0);
         customer.setSavingAccount(new SavingAccount(500, 0.05));
