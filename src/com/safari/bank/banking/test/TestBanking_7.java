@@ -29,8 +29,9 @@ public class TestBanking_7 {
             customer.getAccount(0).withdraw(470);
         } catch (OverdraftException e) {
             System.out.println("Exception: " + e.getMessage() + " Deficit: " + e.getDeficit());
+        } finally {
+            System.out.println("Checking Acct[" + customer.getFirstName() + ", " + customer.getLastName() + "] has a checking balance of " + customer.getAccount(0).getBalance());
         }
-        System.out.println("Checking Acct[" + customer.getFirstName() + ", " + customer.getLastName() + "] has a checking balance of " + customer.getAccount(0).getBalance());
 
         customer = bank.getCustomer(1);
         customer.addAccount(new CheckingAccount(200));
@@ -45,8 +46,9 @@ public class TestBanking_7 {
             customer.getAccount(0).withdraw(175);
         } catch (OverdraftException e) {
             System.out.println("Exception: " + e.getMessage() + "Deficit: " + e.getDeficit());
+        } finally {
+            System.out.println("Checking Acct[" + customer.getFirstName() + ", " + customer.getLastName() + "] has a checking balance of " + customer.getAccount(0).getBalance());
         }
-        System.out.println("Checking Acct[" + customer.getFirstName() + ", " + customer.getLastName() + "] has a checking balance of " + customer.getAccount(0).getBalance());
     }
 
 
